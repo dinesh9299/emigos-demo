@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../images/trinai-02.png";
+import logo from "../emigosimages/emigoslogo.png";
 import logo1 from "../images/trinai white 1 (1).png";
 import gpu from "../images/gpu.png";
 import bullet from "../images/AI02B030L67-28(40)F-NS.png";
@@ -28,153 +28,6 @@ const categories = [
 //   //     "WiFi Smart Outdoor Camera",
 //   //     "WiFi Doorbell Camera",
 //   //   ],
-
-const productsByCategory = {
-  "Bullet Cameras": [
-    {
-      name: "2MP HD Bullet Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "3MP HD Bullet Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "4MP HD Bullet Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "5MP HD Bullet Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "8MP HD Bullet Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-  "Eyeball Cameras": [
-    {
-      name: "4MP EyeBall Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "8MP EyeBall Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "5MP EyeBall Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "2MP EyeBall Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-  "Dome Cameras": [
-    {
-      name: "2MP Dome Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-
-  "PTZ Cameras": [
-    {
-      name: "2MP PTZ Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "4MP PTZ Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-  "Network Video Recorder": [
-    {
-      name: "16/32-Channel Input NVR",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "16/32/64-channel input NVR",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-  "Network Switches": [
-    {
-      name: "8 Port PoE Switch",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "16 Port PoE Switch",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "24 Port Gigabit Switch",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-  Server: [
-    {
-      name: "Server",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-
-  "Smart GPU with AI Camera": [
-    {
-      name: "Smart GPU with AI Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-  "WiFi Smart": [
-    {
-      name: "WiFi Smart Indoor Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "WiFi Smart Outdoor Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-    {
-      name: "WiFi Doorbell Camera",
-      image:
-        "https://cdn.vectorstock.com/i/1000v/32/13/cctv-camera-security-surveillance-system-vector-20943213.jpg",
-    },
-  ],
-};
-
-const categoryImages = {
-  "Bullet Cameras": bullet,
-  "Eyeball Cameras": eyeball,
-  "Dome Cameras": dome,
-  "PTZ Cameras": ptz,
-  Server: server,
-  "Network Video Recorder": "http://trinai.in/Images/NVR.png",
-  "Network Switches":
-    "http://trinai.in/Images/Poe%20Switches/4%20port%20poe.png",
-  "Smart GPU with AI Camera": gpu,
-  "WiFi Smart":
-    "https://img.freepik.com/free-psd/router-isolated-transparent-background_191095-24268.jpg?uid=P7856354&ga=GA1.1.1780034646.1729582102&semt=ais_hybrid",
-};
 
 const Header = () => {
   const navigate = useNavigate();
@@ -216,9 +69,9 @@ const Header = () => {
         isCategoriesOpen ||
         location.pathname === "/cemaradetails" ||
         location.pathname === "/viewproducts"
-          ? "bg-white shadow-lg text-black fixed top-0 left-0 right-0 "
-          : "bg-transparent text-white fixed top-0 left-0 right-0 "
-      } w-full px-4 transition-all duration-300 z-50 flex items-center justify-around pt-5`}
+          ? "bg-slate-200 shadow-lg text-black  top-0 left-0 right-0 "
+          : "bg-slate-200 text-white  top-0 left-0 right-0 "
+      } w-full px-4 transition-all duration-300 z-50 flex items-center  py-4 pt-5`}
     >
       {/* Mega menu section */}
       {isCategoriesOpen && (
@@ -227,78 +80,9 @@ const Header = () => {
           onMouseEnter={() => setIsCategoriesOpen(true)}
           onMouseLeave={() => setIsCategoriesOpen(false)}
         >
-          <div className="flex gap-8 ">
-            {/* Left navigation column */}
-            <div className="w-1/4 border-r pr-6 space-y-4">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`block text-left text-black w-full font-semibold ${
-                    selectedCategory === category
-                      ? "text-blue-700 "
-                      : "hover:text-blue-600"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-
-            {/* Right dynamic product list */}
-            <div className="w-3/4">
-              {" "}
-              <div className="  min-h-24 grid grid-cols-3  gap-10 text-gray-700">
-                {productsByCategory[selectedCategory]?.map((product, index) => (
-                  // <Link to="#" key={index} className="hover:text-blue-600">
-                  //   {product.name}
-                  // </Link>
-                  <div key={index} className=" ">
-                    <div
-                      className=" cursor-pointer hover:text-blue-500"
-                      onClick={() => {
-                        HandleClick(product.name);
-                      }}
-                    >
-                      {product.name}
-                    </div>
-                  </div>
-                ))}
-                <div
-                  onClick={() => {
-                    HandleClick(selectedCategory);
-                  }}
-                  className="text-blue-700 font-semibold  cursor-pointer hover:text-orange-600"
-                >
-                  See More Products →
-                </div>
-              </div>
-              <div className=" mt-10 text-black">
-                <hr></hr>
-                <div className=" flex justify-between py-10 pe-10">
-                  <div>
-                    <div className=" text-orange-600 text-xl font-bold">
-                      Trinai Security Solutions
-                    </div>
-                    <div className=" mt-5 text-xl text-gray-500">
-                      Experience next-level protection with advanced AI
-                      technology.
-                    </div>
-                  </div>
-                  <div>
-                    <img
-                      src={categoryImages[selectedCategory]}
-                      alt={selectedCategory}
-                      className=" w-32 h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="flex gap-8 "></div>
         </div>
       )}
-
       {/* Company Logo */}
       <div
         className="flex items-center justify-center "
@@ -306,150 +90,15 @@ const Header = () => {
       >
         <Link to="/">
           <img
-            src={
-              location.pathname === "/viewproducts" ||
-              isScrolled ||
-              location.pathname === "/cemaradetails" ||
-              isCategoriesOpen
-                ? logo
-                : logo1
-            }
+            src={logo}
             alt="Company Logo"
-            className="h-16 w-auto"
+            className="h-20 object-cover w-60"
           />
         </Link>
       </div>
-
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex space-x-5 lg:space-x-12">
-        <Link
-          to="/"
-          className={`hover:text-orange-600  text-xl font-bold ${
-            location.pathname === "/" ? "text-orange-600" : ""
-          }`}
-        >
-          Home
-        </Link>
-        <Link
-          to="/about"
-          className={`hover:text-orange-600  text-xl font-bold ${
-            location.pathname === "/about" ? "text-orange-600" : ""
-          }`}
-        >
-          About
-        </Link>
-
-        {/* Categories Hover Trigger */}
-        <div
-          className="relative group pb-10"
-          onMouseEnter={() => setIsCategoriesOpen(true)}
-          onMouseLeave={() => setIsCategoriesOpen(false)}
-        >
-          <div
-            className={`hover:text-orange-600 cursor-pointer text-xl font-bold ${
-              location.pathname === "/categories" ? "text-orange-600" : ""
-            }`}
-          >
-            Categories
-          </div>
-        </div>
-
-        <Link
-          to="/solutions"
-          className={`hover:text-orange-600 cursor-pointer text-xl font-bold ${
-            location.pathname === "/solutions" ? "text-orange-600" : ""
-          }`}
-        >
-          Solutions
-        </Link>
-        <Link
-          to="/contact"
-          className={`hover:text-orange-600 cursor-pointer text-xl font-bold ${
-            location.pathname === "/contact" ? "text-orange-600" : ""
-          }`}
-        >
-          Contact
-        </Link>
-      </nav>
-
       {/* Mobile hamburger menu */}
       {/* Hamburger button */}
-      <button
-        onClick={() => setIsMenuOpen(true)}
-        className={`md:hidden ${
-          isScrolled ? "text-black" : "text-white"
-        } flex justify-center items-center -mt-5`}
-      >
-        <svg
-          className="w-10 h-10"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
-
-      {/* Off-canvas menu */}
-      <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white text-black shadow-2xl z-50 transform ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
-      >
-        <div className="flex justify-end p-4">
-          <button onClick={() => setIsMenuOpen(false)}>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-        <nav className="flex flex-col gap-4 px-6">
-          <Link
-            to="/about"
-            onClick={() => setIsMenuOpen(false)}
-            className="hover:text-blue-600"
-          >
-            About Us
-          </Link>
-          <Link
-            to="/products"
-            onClick={() => setIsMenuOpen(false)}
-            className="hover:text-blue-600"
-          >
-            Categories
-          </Link>
-          <Link
-            to="/solutions"
-            onClick={() => setIsMenuOpen(false)}
-            className="hover:text-blue-600"
-          >
-            Solutions
-          </Link>
-          <Link
-            to="/contact"
-            onClick={() => setIsMenuOpen(false)}
-            className="hover:text-blue-600"
-          >
-            Contact
-          </Link>
-        </nav>
-      </div>
-
       {/* Mobile Dropdown */}
       {/* <div
         className={`${
