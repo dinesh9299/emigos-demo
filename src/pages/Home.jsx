@@ -13,6 +13,8 @@ import carousel5 from "../emigosimages/pik-5.jpeg";
 import carousel6 from "../emigosimages/pik-6.jpg";
 import carousel7 from "../emigosimages/pik-7.jpeg";
 import carousel8 from "../emigosimages/pik-8.jpeg";
+import carousel9 from "../emigosimages/pik-9.jpeg";
+import carousel10 from "../emigosimages/pik-10.jpeg";
 
 const Home = () => {
   useEffect(() => {
@@ -123,6 +125,16 @@ const Home = () => {
               img: carousel8,
               title: "Car Rat Repellent Device",
               desc: "Ultrasonic, Non-Toxic, Efficient",
+            },
+            {
+              img: carousel9,
+              title: "Solar Security Street Light",
+              desc: "Bright, eco-friendly, smart monitoring",
+            },
+            {
+              img: carousel10,
+              title: "Smart Solar Street Light",
+              desc: "Wireless, motion sensor, HD camera",
             },
           ].map((product, index) => (
             <motion.div
